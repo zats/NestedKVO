@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048997ADCD334F94A0850669 /* libPods-NestedKVOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECB4AA84F174E08BD14948E /* libPods-NestedKVOTests.a */; };
 		5CA4307B198B9455004BAC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4307A198B9455004BAC1E /* main.m */; };
 		5CA4307E198B9455004BAC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4307D198B9455004BAC1E /* AppDelegate.m */; };
 		5CA43081198B9455004BAC1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA43080198B9455004BAC1E /* ViewController.m */; };
 		5CA43084198B9455004BAC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA43082198B9455004BAC1E /* Main.storyboard */; };
 		5CA43086198B9455004BAC1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA43085198B9455004BAC1E /* Images.xcassets */; };
-		5CA43092198B9455004BAC1E /* NestedKVOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA43091198B9455004BAC1E /* NestedKVOTests.m */; };
+		5CA4309E198B94F2004BAC1E /* NestedKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4309D198B94F2004BAC1E /* NestedKVO.m */; };
+		5CA430A3198B95C5004BAC1E /* NKVOObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA430A2198B95C5004BAC1E /* NKVOObserver.m */; };
+		5CA430A5198B96BD004BAC1E /* NKVOObserverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA430A4198B96BD004BAC1E /* NKVOObserverSpec.m */; };
+		5CA430A9198B988F004BAC1E /* TestClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA430A8198B988F004BAC1E /* TestClasses.m */; };
+		C62731E437E2404A97A48ED8 /* libPods-NestedKVO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A09AD279AA8B4D7C9771451A /* libPods-NestedKVO.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CE23FE29AAA4A72A426D2A1 /* Pods-NestedKVOTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedKVOTests.xcconfig"; path = "Pods/Pods-NestedKVOTests.xcconfig"; sourceTree = "<group>"; };
+		4EA8E4A981D14775A36346DD /* Pods-NestedKVO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedKVO.xcconfig"; path = "Pods/Pods-NestedKVO.xcconfig"; sourceTree = "<group>"; };
 		5CA43075198B9455004BAC1E /* NestedKVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NestedKVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA43079198B9455004BAC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA4307A198B9455004BAC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,7 +44,17 @@
 		5CA43085198B9455004BAC1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CA4308B198B9455004BAC1E /* NestedKVOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NestedKVOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA43090198B9455004BAC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CA43091198B9455004BAC1E /* NestedKVOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NestedKVOTests.m; sourceTree = "<group>"; };
+		5CA4309C198B94F2004BAC1E /* NestedKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedKVO.h; sourceTree = "<group>"; };
+		5CA4309D198B94F2004BAC1E /* NestedKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedKVO.m; sourceTree = "<group>"; };
+		5CA430A0198B953E004BAC1E /* NKVOMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKVOMacros.h; sourceTree = "<group>"; };
+		5CA430A1198B95C5004BAC1E /* NKVOObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKVOObserver.h; sourceTree = "<group>"; };
+		5CA430A2198B95C5004BAC1E /* NKVOObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKVOObserver.m; sourceTree = "<group>"; };
+		5CA430A4198B96BD004BAC1E /* NKVOObserverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKVOObserverSpec.m; path = NestedKVOTests/NKVOObserverSpec.m; sourceTree = SOURCE_ROOT; };
+		5CA430A6198B96DE004BAC1E /* NestedKVOTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NestedKVOTests-Prefix.pch"; sourceTree = "<group>"; };
+		5CA430A7198B988F004BAC1E /* TestClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClasses.h; sourceTree = "<group>"; };
+		5CA430A8198B988F004BAC1E /* TestClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClasses.m; sourceTree = "<group>"; };
+		A09AD279AA8B4D7C9771451A /* libPods-NestedKVO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NestedKVO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EECB4AA84F174E08BD14948E /* libPods-NestedKVOTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NestedKVOTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62731E437E2404A97A48ED8 /* libPods-NestedKVO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048997ADCD334F94A0850669 /* libPods-NestedKVOTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +80,13 @@
 		5CA4306C198B9455004BAC1E = {
 			isa = PBXGroup;
 			children = (
-				5CA43077198B9455004BAC1E /* NestedKVO */,
+				5CA4309B198B94D9004BAC1E /* NestedKVO */,
+				5CA43077198B9455004BAC1E /* Example */,
 				5CA4308E198B9455004BAC1E /* NestedKVOTests */,
 				5CA43076198B9455004BAC1E /* Products */,
+				3CE23FE29AAA4A72A426D2A1 /* Pods-NestedKVOTests.xcconfig */,
+				8D855718C0FF4639B013A4AB /* Frameworks */,
+				4EA8E4A981D14775A36346DD /* Pods-NestedKVO.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,7 +99,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CA43077198B9455004BAC1E /* NestedKVO */ = {
+		5CA43077198B9455004BAC1E /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				5CA4307C198B9455004BAC1E /* AppDelegate.h */,
@@ -87,6 +110,7 @@
 				5CA43085198B9455004BAC1E /* Images.xcassets */,
 				5CA43078198B9455004BAC1E /* Supporting Files */,
 			);
+			name = Example;
 			path = NestedKVO;
 			sourceTree = "<group>";
 		};
@@ -102,7 +126,9 @@
 		5CA4308E198B9455004BAC1E /* NestedKVOTests */ = {
 			isa = PBXGroup;
 			children = (
-				5CA43091198B9455004BAC1E /* NestedKVOTests.m */,
+				5CA430A4198B96BD004BAC1E /* NKVOObserverSpec.m */,
+				5CA430A7198B988F004BAC1E /* TestClasses.h */,
+				5CA430A8198B988F004BAC1E /* TestClasses.m */,
 				5CA4308F198B9455004BAC1E /* Supporting Files */,
 			);
 			path = NestedKVOTests;
@@ -112,8 +138,31 @@
 			isa = PBXGroup;
 			children = (
 				5CA43090198B9455004BAC1E /* Info.plist */,
+				5CA430A6198B96DE004BAC1E /* NestedKVOTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CA4309B198B94D9004BAC1E /* NestedKVO */ = {
+			isa = PBXGroup;
+			children = (
+				5CA4309C198B94F2004BAC1E /* NestedKVO.h */,
+				5CA4309D198B94F2004BAC1E /* NestedKVO.m */,
+				5CA430A1198B95C5004BAC1E /* NKVOObserver.h */,
+				5CA430A2198B95C5004BAC1E /* NKVOObserver.m */,
+				5CA430A0198B953E004BAC1E /* NKVOMacros.h */,
+			);
+			name = NestedKVO;
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		8D855718C0FF4639B013A4AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EECB4AA84F174E08BD14948E /* libPods-NestedKVOTests.a */,
+				A09AD279AA8B4D7C9771451A /* libPods-NestedKVO.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CA43095198B9455004BAC1E /* Build configuration list for PBXNativeTarget "NestedKVO" */;
 			buildPhases = (
+				E241E1C5087E4443A1CAAB64 /* Check Pods Manifest.lock */,
 				5CA43071198B9455004BAC1E /* Sources */,
 				5CA43072198B9455004BAC1E /* Frameworks */,
 				5CA43073198B9455004BAC1E /* Resources */,
+				3A8A66DBFEE644F2A353528D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CA43098198B9455004BAC1E /* Build configuration list for PBXNativeTarget "NestedKVOTests" */;
 			buildPhases = (
+				00C66A5518E946B8986A5FE2 /* Check Pods Manifest.lock */,
 				5CA43087198B9455004BAC1E /* Sources */,
 				5CA43088198B9455004BAC1E /* Frameworks */,
 				5CA43089198B9455004BAC1E /* Resources */,
+				10998BED3F544277857401E7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +213,7 @@
 		5CA4306D198B9455004BAC1E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NKVO;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Sash Zats";
 				TargetAttributes = {
@@ -210,13 +264,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00C66A5518E946B8986A5FE2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		10998BED3F544277857401E7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NestedKVOTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A8A66DBFEE644F2A353528D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NestedKVO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E241E1C5087E4443A1CAAB64 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CA43071198B9455004BAC1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5CA43081198B9455004BAC1E /* ViewController.m in Sources */,
+				5CA4309E198B94F2004BAC1E /* NestedKVO.m in Sources */,
 				5CA4307E198B9455004BAC1E /* AppDelegate.m in Sources */,
+				5CA430A3198B95C5004BAC1E /* NKVOObserver.m in Sources */,
 				5CA4307B198B9455004BAC1E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CA43092198B9455004BAC1E /* NestedKVOTests.m in Sources */,
+				5CA430A9198B988F004BAC1E /* TestClasses.m in Sources */,
+				5CA430A5198B96BD004BAC1E /* NKVOObserverSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +449,12 @@
 		};
 		5CA43096198B9455004BAC1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA8E4A981D14775A36346DD /* Pods-NestedKVO.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NestedKVO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -340,10 +462,12 @@
 		};
 		5CA43097198B9455004BAC1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA8E4A981D14775A36346DD /* Pods-NestedKVO.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NestedKVO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,17 +475,30 @@
 		};
 		5CA43099198B9455004BAC1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE23FE29AAA4A72A426D2A1 /* Pods-NestedKVOTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NestedKVO.app/NestedKVO";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = "NestedKVOTests/NestedKVOTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/Expecta\"",
+					"\"${PODS_ROOT}/Headers/KVOController\"",
+					"\"${PODS_ROOT}/Headers/OCHamcrest\"",
+					"\"${PODS_ROOT}/Headers/OCMockito\"",
+					"\"${PODS_ROOT}/Headers/Specta\"",
+					"\"${PODS_ROOT}/Headers/TPWeakProxy\"",
+				);
 				INFOPLIST_FILE = NestedKVOTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -370,13 +507,26 @@
 		};
 		5CA4309A198B9455004BAC1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE23FE29AAA4A72A426D2A1 /* Pods-NestedKVOTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NestedKVO.app/NestedKVO";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = "NestedKVOTests/NestedKVOTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/Expecta\"",
+					"\"${PODS_ROOT}/Headers/KVOController\"",
+					"\"${PODS_ROOT}/Headers/OCHamcrest\"",
+					"\"${PODS_ROOT}/Headers/OCMockito\"",
+					"\"${PODS_ROOT}/Headers/Specta\"",
+					"\"${PODS_ROOT}/Headers/TPWeakProxy\"",
+				);
 				INFOPLIST_FILE = NestedKVOTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -402,6 +552,7 @@
 				5CA43097198B9455004BAC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5CA43098198B9455004BAC1E /* Build configuration list for PBXNativeTarget "NestedKVOTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +561,7 @@
 				5CA4309A198B9455004BAC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

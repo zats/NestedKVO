@@ -1,0 +1,22 @@
+//
+//  NestedKVO-Tests.pch
+//  NestedKVO
+//
+//  Created by Sasha Zats on 8/1/14.
+//  Copyright (c) 2014 Sash Zats. All rights reserved.
+//
+
+#ifndef NestedKVO_NestedKVO_Tests_pch
+#define NestedKVO_NestedKVO_Tests_pch
+
+#import <Specta/Specta.h>
+#define EXP_SHORTHAND
+#import <Expecta/Expecta.h>
+
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
+
+#define MOCKITO_SHORTHAND
+#import <OCMockito/OCMockito.h>
+
+#endif
