@@ -36,7 +36,7 @@
     self.object = object;
     self.keyPathes = keyPath;
     self.observers = [NSSet set];
-    
+
     return self;
 }
 
@@ -57,33 +57,32 @@
 }
 
 - (void)startObserving {
-    [self _setupObserver];
-
-    for (NKVOObserver *observer in self.observers) {
-        [observer startObserving];
-    }
-}
-
-- (void)stopObserving {
-    [self _tearDownObserver];
-
-    for (NKVOObserver *observer in self.observers) {
-        [observer stopObserving];
-    }
-}
-
-#pragma mark - Private
-
-- (void)_setupObserver {
     [self willChangeValueForKey:NKVOSelfKeyPath(isObserving)];
     
     FBKVOController *controller = [FBKVOController controllerWithObserver:self];
-    self.observerController = controller;
     [controller observe:self.object
                 keyPath:[self.keyPathes firstObject]
                 options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                  action:@selector(_handleChanges:object:)];
+    
+    for (NKVOObserver *observer in self.observers) {
+        [observer startObserving];
+    }
+    
+    self.observerController = controller;
+    [self didChangeValueForKey:NKVOSelfKeyPath(isObserving)];
+}
 
+- (void)stopObserving {
+    [self willChangeValueForKey:NKVOSelfKeyPath(isObserving)];
+    
+    [self.observerController unobserveAll];
+    self.observerController = nil;
+    
+    for (NKVOObserver *observer in self.observers) {
+        [observer stopObserving];
+    }
+    
     [self didChangeValueForKey:NKVOSelfKeyPath(isObserving)];
 }
 
@@ -91,14 +90,7 @@
     return self.observerController != nil;
 }
 
-- (void)_tearDownObserver {
-    [self willChangeValueForKey:NKVOSelfKeyPath(isObserving)];
-
-    [self.observerController unobserveAll];
-    self.observerController = nil;
-    
-    [self didChangeValueForKey:NKVOSelfKeyPath(isObserving)];
-}
+#pragma mark - Private
 
 - (void)_handleChanges:(NSDictionary *)change object:(id)object {
     if (self.isLeafObserver) {
@@ -136,6 +128,7 @@
             break;
             
         case NSKeyValueChangeRemoval:
+            [self _removeObserverFromOldValues:change[NSKeyValueChangeOldKey]];
             break;
             
         case NSKeyValueChangeReplacement:
@@ -146,7 +139,36 @@
 #pragma mark - Removing observers
 
 - (void)_removeObserverFromOldValues:(id)object {
+    if (!object) {
+        return;
+    }
     
+    if ([object isKindOfClass:[NSSet class]] ||
+        [object isKindOfClass:[NSArray class]]) {
+        [self _removeObserverForCollection:object];
+    } else {
+        [self _removeObserverFromOldValues:object];
+    }
+}
+
+- (void)_removeObserverForCollection:(id<NSFastEnumeration>)collection {
+    for (id object in collection) {
+        [self _removeObservationForObject:object];
+    }
+}
+
+- (void)_removeObservationForObject:(id)object {
+    NKVOObserver *observer = nil;
+    for (NKVOObserver *observerr in self.observers) {
+        if (observerr.object == object) {
+            observer = observerr;
+            break;
+        }
+    }
+    NSAssert(observer, @"Observer was not registered for object %@", object);
+    [[self mutableSetValueForKey:NKVOSelfKeyPath(observers)] removeObject:observer];
+    [observer stopObserving];
+    observer.delegate = nil;
 }
 
 #pragma mark - Private adding observers

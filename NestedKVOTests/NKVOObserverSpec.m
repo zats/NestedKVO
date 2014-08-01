@@ -147,11 +147,12 @@ describe(@"NKVOObserver", ^{
             });
         });
         
-        fdescribe(@"nested keyPath with a non collection property at the end", ^{
+        describe(@"nested keyPath with a non collection property at the end", ^{
             __block Cart *cart;
             __block NKVOObserver *observer;
+            __block id<NKVOObserverDelegate> delegate;
             
-            beforeAll(^{
+            beforeEach(^{
                 cart = [Cart new];
                 
                 observer = [[NKVOObserver alloc] initWithObject:cart keyPathes:@[
@@ -159,11 +160,12 @@ describe(@"NKVOObserver", ^{
                     NKVOTypedKeyPath(CartSection, products),
                     NKVOTypedKeyPath(Product, name)
                 ]];
+                
+                delegate = mockProtocol(@protocol(NKVOObserverDelegate));
+                observer.delegate = delegate;
             });
             
             it(@"should report just the final change", ^{
-                id<NKVOObserverDelegate> delegate = mockProtocol(@protocol(NKVOObserverDelegate));
-                observer.delegate = delegate;
                 [observer startObserving];
                 
                 CartSection *section1 = [CartSection new];
@@ -187,6 +189,49 @@ describe(@"NKVOObserver", ^{
                 expect([argument allValues][1][NSKeyValueChangeNewKey]).equal([NSNull null]);
                 expect([argument allValues][2][NSKeyValueChangeNewKey]).equal(@"T-shirt");
             });
+            
+            it(@"should stop reporting changes after item is removed from the collection", ^{
+                
+                CartSection *section1 = [CartSection new];
+                [cart addSection:section1];
+                Product *product1 = [Product new];
+                [section1 addProduct:product1];
+                
+                CartSection *section2 = [CartSection new];
+                [cart addSection:section2];
+                Product *product2 = [Product new];
+                [section2 addProduct:product2];
+                product2.name = @"T-shirt";
+                
+                [cart addSection:[CartSection new]];
+                
+                [observer startObserving];
+                [MKTVerifyCount(delegate, times(2)) observer:observer
+                                            didObserveChange:anything()
+                                                      object:anything()];
+                [section2 removeProduct:product2];
+                product2.name = @"This change won't be registered";
+                [MKTVerifyCount(delegate, times(2)) observer:anything()
+                                            didObserveChange:anything()
+                                                      object:anything()];
+
+            });
+        });
+        
+        describe(@"not observing changes after removing from collection", ^{
+            __block Cart *cart;
+            __block NKVOObserver *observer;
+            
+            beforeEach(^{
+                cart = [Cart new];
+                
+                observer = [[NKVOObserver alloc] initWithObject:cart keyPathes:@[
+                    NKVOTypedKeyPath(Cart, sections),
+                    NKVOTypedKeyPath(CartSection, products),
+                    NKVOTypedKeyPath(Product, name)
+                ]];
+            });
+            
             
             
         });

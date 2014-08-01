@@ -21,6 +21,7 @@
 - (instancetype)initWithObject:(id)object keyPathes:(NSArray *)keyPath;
 
 - (void)startObserving;
+
 - (void)stopObserving;
 
 - (BOOL)isObserving;
